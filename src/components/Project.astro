@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+
+// Una ficha de proyecto. La captura carga el peso visual; si falta, se ve el
+// hueco a proposito, para que no se publique un proyecto sin imagen real.
+interface Props {
+  title: string;
+  href?: string;
+  hrefLabel?: string;
+  shot?: ImageMetadata;
+  shotAlt?: string;
+}
+const { title, href, hrefLabel, shot, shotAlt } = Astro.props;
+---
+
+<article>
+  <div class="aspect-[16/10] overflow-hidden rounded-[10px] border border-line bg-panel">
+    {
+      shot ? (
+        <Image
+          src={shot}
+          alt={shotAlt ?? title}
+          widths={[420, 840, 1200]}
+          sizes="(min-width: 1024px) 22rem, (min-width: 640px) 45vw, 90vw"
+          format="avif"
+          class="block size-full object-cover object-top"
+          loading="lazy"
+        />
+      ) : (
+        <div class="flex size-full items-center justify-center text-[13px] text-muted">
+          captura pendiente
+        </div>
+      )
+    }
+  </div>
+
+  <h3 class="mt-5 mb-1.5 text-[19px] font-semibold">{title}</h3>
+  <div class="prose">
+    <slot />
+  </div>
+  {
+    href && (
+      <p class="mt-3 mb-0 text-[15px] font-medium">
+        <a href={href} rel="noopener">
+          {hrefLabel ?? href}
+        </a>
+      </p>
+    )
+  }
+</article>

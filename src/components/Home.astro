@@ -1,0 +1,152 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Section from './Section.astro';
+import Role from './Role.astro';
+import Project from './Project.astro';
+import { ui, education, stack, type Locale } from '../i18n/site';
+import portrait from '../assets/portrait.jpg';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = ui[locale];
+
+const page = await getEntry('page', locale);
+const about = await getEntry('about', locale);
+if (!page || !about) throw new Error(`Falta el contenido de la pagina para "${locale}"`);
+
+const { Content: PageContent } = await render(page);
+const { Content: AboutContent } = await render(about);
+
+const all = await getCollection('roles', (r) => r.data.lang === locale);
+const paid = all.filter((r) => !r.data.probono).sort((a, b) => a.data.order - b.data.order);
+const probono = all.filter((r) => r.data.probono).sort((a, b) => a.data.order - b.data.order);
+
+const projects = (await getCollection('projects', (p) => p.data.lang === locale)).sort(
+  (a, b) => a.data.order - b.data.order
+);
+
+const roles = await Promise.all(
+  [...paid, ...probono].map(async (r) => ({ ...r, rendered: await render(r) }))
+);
+const cards = await Promise.all(
+  projects.map(async (p) => ({ ...p, rendered: await render(p) }))
+);
+
+const paidCount = paid.length;
+---
+
+<Base locale={locale} title="Sebastián García Romero">
+  <div class="flex flex-col items-start gap-8 sm:mt-2 sm:flex-row sm:items-center sm:gap-12">
+    <div class="prose-hero grow">
+      <PageContent />
+    </div>
+    <div class="w-full shrink-0 sm:w-fit sm:text-center">
+      <p class="m-0 text-[17px] font-semibold tracking-[-0.015em]">
+        Sebastián García Romero
+      </p>
+      <Image
+        src={portrait}
+        alt="Sebastián García Romero"
+        widths={[88, 132, 264]}
+        sizes="(min-width: 640px) 132px, 88px"
+        format="avif"
+        class="mt-4 size-[88px] rounded-full object-cover sm:mx-auto sm:size-[132px]"
+        loading="eager"
+      />
+      <div class="mt-4 w-max max-w-full text-[15px] leading-relaxed text-muted">
+        {page.data.availability.map((line) => <div>{line}</div>)}
+      </div>
+    </div>
+  </div>
+
+  <ul class="mt-7 flex list-none flex-wrap gap-x-7 gap-y-2 p-0 text-[15px] font-medium">
+    <li><a href={`mailto:${page.data.email}`}>{page.data.email}</a></li>
+    <li><a href={page.data.linkedin} rel="noopener">LinkedIn</a></li>
+    <li><a href={page.data.github} rel="noopener">GitHub</a></li>
+  </ul>
+
+  <Section title={t.experience} id="experience">
+    {
+      roles.map((r, i) => (
+        <>
+          {i === paidCount && (
+            <h3 class="mt-14 mb-0 text-base font-semibold text-muted">{t.proBono}</h3>
+          )}
+          <Role
+            company={r.data.company}
+            role={r.data.role}
+            location={r.data.location}
+            dates={r.data.dates}
+            tag={r.data.tag}
+            first={i === 0}
+          >
+            <r.rendered.Content />
+          </Role>
+        </>
+      ))
+    }
+  </Section>
+
+  <Section title={t.built} note={t.builtNote} id="built">
+    <div class="grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        cards.map((p) => (
+          <Project
+            title={p.data.title}
+            href={p.data.href}
+            hrefLabel={p.data.hrefLabel}
+            shot={p.data.shot}
+            shotAlt={p.data.shotAlt}
+          >
+            <p.rendered.Content />
+          </Project>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section title={t.education} id="education">
+    <div class="grid grid-cols-1 gap-y-8">
+      {
+        education[locale].map((e) => (
+          <div class="grid grid-cols-1 gap-x-10 gap-y-2 sm:grid-cols-12">
+            <div class="sm:col-span-3">
+              <p class="m-0 text-base font-semibold">{e.school}</p>
+              <p class="mt-1.5 mb-0 text-sm text-muted">{e.dates}</p>
+            </div>
+            <p class="m-0 max-w-[62ch] text-[17px] leading-relaxed text-body sm:col-span-9">
+              {e.detail}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section title={t.stack} id="stack">
+    <p class="m-0 max-w-[62ch] text-[17px] leading-relaxed text-body">
+      {stack.join(', ')}.
+    </p>
+    <p class="mt-6 mb-0 max-w-[62ch] text-[17px] leading-relaxed text-body">
+      <span class="text-muted">{t.languages}:</span> {t.languagesList}
+    </p>
+  </Section>
+
+  <Section title={t.about} id="about">
+    <div class="prose max-w-[62ch]">
+      <AboutContent />
+    </div>
+  </Section>
+
+  <Section title={t.contact} note={t.contactNote} id="contact">
+    <ul class="m-0 flex list-none flex-col gap-3 p-0 text-[19px] font-medium">
+      <li><a href={`mailto:${page.data.email}`}>{page.data.email}</a></li>
+      <li><a href={page.data.linkedin} rel="noopener">LinkedIn</a></li>
+      <li><a href={page.data.github} rel="noopener">GitHub</a></li>
+    </ul>
+  </Section>
+</Base>

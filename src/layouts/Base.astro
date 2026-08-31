@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import { ui, type Locale } from '../i18n/site';
+
+interface Props {
+  locale: Locale;
+  title: string;
+}
+const { locale, title } = Astro.props;
+const t = ui[locale];
+const home = locale === 'en' ? '/' : '/es/';
+const other = t.otherLocale === 'en' ? '/' : '/es/';
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={t.metaDescription} />
+    <link rel="canonical" href={new URL(home, Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site)} />
+    <link rel="alternate" hreflang="es" href={new URL('/es/', Astro.site)} />
+    <link
+      rel="preload"
+      href="/fonts/instrument-sans-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={t.metaDescription} />
+    <meta property="og:type" content="profile" />
+  </head>
+
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:bg-white focus:px-4 focus:py-2 focus:text-blue"
+    >
+      {t.skipToContent}
+    </a>
+
+    <header class="sticky top-0 z-20 border-b border-line bg-white">
+      <div
+        class="mx-auto flex w-full max-w-[76rem] flex-wrap items-center justify-between gap-x-5 gap-y-2 px-6 py-3.5 sm:gap-y-3 sm:px-10 sm:py-5 lg:px-16"
+      >
+        <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] font-medium sm:gap-x-8 sm:text-sm">
+          {
+            t.nav.map((item) => (
+              <a href={item.href} class="text-muted hover:text-ink">
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+        <nav class="flex items-center gap-4 text-[13px] font-medium sm:gap-7 sm:text-sm">
+          <span class="text-ink" aria-current="true">{t.thisLocaleLabel}</span>
+          <a href={other} class="text-muted hover:text-ink" hreflang={t.otherLocale}>
+            {t.otherLocaleLabel}
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="mx-auto w-full max-w-[76rem] px-6 sm:px-10 lg:px-16">
+      <main id="main" class="pt-12 sm:pt-16">
+        <slot />
+      </main>
+
+      <footer class="border-t border-line py-10 text-sm text-muted">
+        <p class="m-0">
+          © {new Date().getFullYear()} Sebastián García Romero. Madrid.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
