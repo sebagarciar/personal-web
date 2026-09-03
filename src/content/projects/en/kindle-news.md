@@ -12,5 +12,4 @@ Nine headlines a day, ranked by how many outlets cover them rather than by
 recency, summarized by a local model and emailed as an EPUB straight to my
 Kindle. It reads 12 RSS feeds across World, AI and Chile, and a Telegram bot
 lets me queue articles from my phone into the same digest. No cloud API, no
-server: everything runs on my laptop. 3 real editions delivered to the Kindle
-so far.
+server: everything runs on my laptop.
