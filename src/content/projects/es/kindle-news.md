@@ -1,7 +1,7 @@
 ---
 lang: es
 title: Kindle News Filter
-order: 4
+order: 2
 href: https://github.com/sebagarciar/kindle-news-filter
 hrefLabel: Código en GitHub
 shot: ../../../assets/shots/kindle-news.png

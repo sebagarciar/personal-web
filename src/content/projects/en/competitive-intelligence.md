@@ -1,7 +1,7 @@
 ---
 lang: en
 title: Competitive Intelligence
-order: 3
+order: 4
 href: https://ai-competitive-intelligence-ivxkskkzbxnb4msw3yuvbs.streamlit.app/
 hrefLabel: Open the dashboard
 shot: ../../../assets/shots/competitive-intelligence.png

@@ -1,7 +1,7 @@
 ---
 lang: es
 title: designedbyanna.cl
-order: 2
+order: 3
 href: https://designedbyanna.cl
 hrefLabel: Ver la tienda
 shot: ../../../assets/shots/designedbyanna.png
