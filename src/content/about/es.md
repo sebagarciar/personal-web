@@ -2,18 +2,28 @@
 lang: es
 ---
 
-Pasé seis años operando antes de aprender a construir software. En Uber fui
-dueño de la vertical Rider en Chile, de un presupuesto de dos millones de
-dólares al mes y del tipo de problemas que no caben en una lámina. En
-Simon-Kucher le puse precio a quince mil productos para gente que tenía que
-venderlos a la mañana siguiente.
+He sido la persona de tecnología de la familia desde adolescente, siempre
+persiguiendo el último gadget. Esa curiosidad es la razón por la que estudié
+ingeniería con un minor en TI, pero ahí también me di cuenta de que el camino
+de ingeniería de software no era para mí.
 
-Hoy construyo las herramientas que antes le pedía a otros equipos. Una app de
-finanzas porque dos países y dos monedas estaban rompiendo mis planillas.
-Automatizaciones en Chanel porque cuarenta horas al mes se estaban yendo en
-trabajo manual. Nada de esto es una pieza de portfolio. Todo lo uso.
+Quería seguir formándome, así que entré a Simon-Kucher como consultor. Ahí
+reestructuré el pricing de un negocio local y vi cómo esa recomendación movía
+su crecimiento. Fue cuando el objetivo dejó de ser el número y pasó a ser el
+impacto detrás de él.
 
-Busco un rol donde esas dos cosas sean el mismo trabajo: alguien que ha cargado
-un número, y que puede construir la cosa que lo mueve.
+En consultoría me faltaba la parte de tecnología, así que después me fui a
+Uber. Ahí lideré proyectos de punta a punta y vi cómo la tecnología cambia el
+día a día de la gente. Es el mismo impulso que hoy me lleva hacia la IA.
 
-No un investigador. No la persona que te entrega una estrategia y se va.
+Sigo siendo la persona a la que la gente recurre con un problema de
+tecnología, solo que ahora con mejores herramientas. El objetivo no cambió:
+seguir construyendo hacia roles de liderazgo en grandes empresas, de vuelta en
+Chile.
+
+Por ahora, eso sí, lo que más me gusta es donde se cruzan tecnología y
+negocio. Por eso busco un rol que necesite las dos cosas, donde cargar un
+número y construir lo que lo mueve sean el mismo trabajo.
+
+Fuera del trabajo me vas a encontrar en una cancha de golf o viendo fútbol.
+Viajar es mi verdadera pasión: ya he visitado más de 40 países.

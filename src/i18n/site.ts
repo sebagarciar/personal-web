@@ -75,11 +75,6 @@ export const education = {
       detail: 'Industrial Civil Engineering, minor in Information Technology.',
       dates: '2019',
     },
-    {
-      school: 'UCLA Extension',
-      detail: 'Certificate in Business, concentration in Marketing.',
-      dates: '2017',
-    },
   ],
   es: [
     {
@@ -92,11 +87,6 @@ export const education = {
       school: 'Pontificia Universidad Católica de Chile',
       detail: 'Ingeniería Civil Industrial, minor en Tecnologías de Información.',
       dates: '2019',
-    },
-    {
-      school: 'UCLA Extension',
-      detail: 'Certificado en Negocios, concentración en Marketing.',
-      dates: '2017',
     },
   ],
 } as const;
