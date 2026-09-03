@@ -69,6 +69,24 @@ const paidCount = paid.length;
     <li><a href={page.data.github} rel="noopener">GitHub</a></li>
   </ul>
 
+  <Section title={t.built} note={t.builtNote} id="built">
+    <div class="grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        cards.map((p) => (
+          <Project
+            title={p.data.title}
+            href={p.data.href}
+            hrefLabel={p.data.hrefLabel}
+            shot={p.data.shot}
+            shotAlt={p.data.shotAlt}
+          >
+            <p.rendered.Content />
+          </Project>
+        ))
+      }
+    </div>
+  </Section>
+
   <Section title={t.experience} id="experience">
     {
       roles.map((r, i) => (
@@ -89,24 +107,6 @@ const paidCount = paid.length;
         </>
       ))
     }
-  </Section>
-
-  <Section title={t.built} note={t.builtNote} id="built">
-    <div class="grid grid-cols-1 gap-x-7 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        cards.map((p) => (
-          <Project
-            title={p.data.title}
-            href={p.data.href}
-            hrefLabel={p.data.hrefLabel}
-            shot={p.data.shot}
-            shotAlt={p.data.shotAlt}
-          >
-            <p.rendered.Content />
-          </Project>
-        ))
-      }
-    </div>
   </Section>
 
   <Section title={t.education} id="education">

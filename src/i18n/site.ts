@@ -16,8 +16,8 @@ export const ui = {
     /* Enlaces de la cabecera. Cuatro: los que responden las preguntas que un
        recruiter se hace antes de escribir. */
     nav: [
-      { href: '#experience', label: 'Experience' },
       { href: '#built', label: 'Projects' },
+      { href: '#experience', label: 'Experience' },
       { href: '#education', label: 'Education' },
       { href: '#contact', label: 'Contact' },
     ],
@@ -42,8 +42,8 @@ export const ui = {
     thisLocaleLabel: 'ES',
     skipToContent: 'Saltar al contenido',
     nav: [
-      { href: '#experience', label: 'Experiencia' },
       { href: '#built', label: 'Proyectos' },
+      { href: '#experience', label: 'Experiencia' },
       { href: '#education', label: 'Formación' },
       { href: '#contact', label: 'Contacto' },
     ],
