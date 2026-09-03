@@ -25,5 +25,5 @@ Por ahora, eso sí, lo que más me gusta es donde se cruzan ==tecnología== y
 ==negocio==. Por eso busco un rol que necesite las dos cosas, donde cargar un
 número y construir lo que lo mueve sean el mismo trabajo.
 
-Fuera del trabajo me vas a encontrar en una cancha de golf o viendo fútbol.
-Viajar es mi verdadera pasión: ya he visitado más de 40 países.
+==Fuera del trabajo== me vas a encontrar en una cancha de golf o viendo
+fútbol. Viajar es mi verdadera pasión: ya he visitado más de 40 países.

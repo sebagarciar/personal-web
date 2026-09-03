@@ -24,5 +24,5 @@ For now, though, I love where ==technology== and ==business== meet. That's
 why I'm looking for a role that needs both, where carrying a number and
 building the thing that moves it are the same job.
 
-Outside work, you'll find me on a golf course or watching soccer. Travel is
-my real passion: I've visited more than 40 countries so far.
+==Outside work==, you'll find me on a golf course or watching soccer. Travel
+is my real passion: I've visited more than 40 countries so far.

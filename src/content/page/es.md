@@ -13,6 +13,7 @@ github: https://github.com/sebagarciar
 Fui dueño de la vertical Rider de Uber en Chile y le puse precio a los
 productos de los clientes de Simon-Kucher. Durante el MBA uso IA para
 construir una app de finanzas que arregle mis propias planillas en dos
-monedas, migrar la tienda de mi mamá a Shopify, y construir una herramienta de
-social listening para el equipo de marketing de Chanel. Enseño las mismas
-habilidades de forma pro bono en la Fundación Casa de México.
+monedas, migrar la tienda de mi mamá a Shopify, y construir un resumen de
+noticias para Kindle que rankea mis titulares con un modelo de IA local. Uso
+lo que aprendo para enseñar IA en lugares como la Fundación Casa de México y
+Chanel.
