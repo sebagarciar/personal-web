@@ -35,8 +35,6 @@ const roles = await Promise.all(
 const cards = await Promise.all(
   projects.map(async (p) => ({ ...p, rendered: await render(p) }))
 );
-
-const paidCount = paid.length;
 ---
 
 <Base locale={locale} title="Sebastián García Romero">
@@ -44,7 +42,7 @@ const paidCount = paid.length;
     <div class="prose-hero grow">
       <PageContent />
     </div>
-    <div class="w-full shrink-0 sm:w-fit sm:text-center">
+    <div class="w-full shrink-0 text-center sm:w-fit">
       <p class="m-0 text-[17px] font-semibold tracking-[-0.015em]">
         Sebastián García Romero
       </p>
@@ -54,10 +52,10 @@ const paidCount = paid.length;
         widths={[88, 132, 264]}
         sizes="(min-width: 640px) 132px, 88px"
         format="avif"
-        class="mt-4 size-[88px] rounded-full object-cover sm:mx-auto sm:size-[132px]"
+        class="mx-auto mt-4 size-[88px] rounded-full object-cover sm:size-[132px]"
         loading="eager"
       />
-      <div class="mt-4 w-max max-w-full text-[15px] leading-relaxed text-muted">
+      <div class="mx-auto mt-4 w-max max-w-full text-[15px] leading-relaxed text-muted">
         {page.data.availability.map((line) => <div>{line}</div>)}
       </div>
     </div>
@@ -90,21 +88,16 @@ const paidCount = paid.length;
   <Section title={t.experience} id="experience">
     {
       roles.map((r, i) => (
-        <>
-          {i === paidCount && (
-            <h3 class="mt-14 mb-0 text-base font-semibold text-muted">{t.proBono}</h3>
-          )}
-          <Role
-            company={r.data.company}
-            role={r.data.role}
-            location={r.data.location}
-            dates={r.data.dates}
-            tag={r.data.tag}
-            first={i === 0}
-          >
-            <r.rendered.Content />
-          </Role>
-        </>
+        <Role
+          company={r.data.company}
+          role={r.data.role}
+          location={r.data.location}
+          dates={r.data.dates}
+          tag={r.data.tag}
+          first={i === 0}
+        >
+          <r.rendered.Content />
+        </Role>
       ))
     }
   </Section>

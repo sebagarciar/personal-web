@@ -5,6 +5,7 @@ role: AI training and automation
 location: Madrid
 dates: February–July 2026
 order: 5
+tag: Pro bono
 probono: true
 ---
 

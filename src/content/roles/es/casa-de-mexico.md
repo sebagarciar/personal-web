@@ -5,6 +5,7 @@ role: Formación en IA y automatización
 location: Madrid
 dates: Febrero a julio 2026
 order: 5
+tag: Pro bono
 probono: true
 ---
 
