@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
+import { unified } from '@astrojs/markdown-remark';
 import { remarkMark } from './src/lib/remark-mark.mjs';
 
 export default defineConfig({
@@ -11,7 +12,7 @@ export default defineConfig({
     routing: { prefixDefaultLocale: false },
   },
   markdown: {
-    remarkPlugins: [remarkMark],
+    processor: unified({ remarkPlugins: [remarkMark] }),
   },
   vite: {
     plugins: [tailwindcss()],
