@@ -26,6 +26,7 @@ export const ui = {
     builtNote: 'Not portfolio pieces. All four are running.',
     education: 'Education',
     stack: 'Stack',
+    claudeSkills: 'Claude Skills',
     languages: 'Languages',
     about: 'About me',
     contact: 'Get in touch',
@@ -51,6 +52,7 @@ export const ui = {
     builtNote: 'No son piezas de portfolio. Las cuatro están funcionando.',
     education: 'Formación',
     stack: 'Stack',
+    claudeSkills: 'Claude Skills',
     languages: 'Idiomas',
     about: 'Sobre mí',
     contact: 'Hablemos',
@@ -101,3 +103,43 @@ export const stack = [
   'Prompt engineering',
   'Claude Code',
 ] as const;
+
+const claudeSkillsRepo = 'https://github.com/sebagarciar/claude-skills';
+
+/** Skills de Claude Code que uso a diario. Nombre real del skill + qué hace. */
+export const claudeSkills = {
+  en: [
+    {
+      name: 'finance-dashboard-design',
+      detail: 'The design system that governs the home finance app above.',
+      href: `${claudeSkillsRepo}/tree/main/finance-dashboard-design`,
+    },
+    {
+      name: 'tailor-cv',
+      detail: 'Matches my CV to a job ad and outputs the PDF ready to apply.',
+      href: `${claudeSkillsRepo}/tree/main/tailor-cv`,
+    },
+    {
+      name: 'weekly-vault-review',
+      detail: 'Weekly cleanup pass on my MBA notes vault in Obsidian.',
+      href: `${claudeSkillsRepo}/tree/main/weekly-vault-review`,
+    },
+  ],
+  es: [
+    {
+      name: 'finance-dashboard-design',
+      detail: 'El sistema de diseño que gobierna la app de finanzas de arriba.',
+      href: `${claudeSkillsRepo}/tree/main/finance-dashboard-design`,
+    },
+    {
+      name: 'tailor-cv',
+      detail: 'Ajusta mi CV a una oferta y entrega el PDF listo para postular.',
+      href: `${claudeSkillsRepo}/tree/main/tailor-cv`,
+    },
+    {
+      name: 'weekly-vault-review',
+      detail: 'Limpieza semanal de mi vault de notas del MBA en Obsidian.',
+      href: `${claudeSkillsRepo}/tree/main/weekly-vault-review`,
+    },
+  ],
+} as const;

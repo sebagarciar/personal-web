@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
 import Section from './Section.astro';
 import Role from './Role.astro';
 import Project from './Project.astro';
-import { ui, education, stack, type Locale } from '../i18n/site';
+import { ui, education, stack, claudeSkills, type Locale } from '../i18n/site';
 import portrait from '../assets/portrait.jpg';
 
 interface Props {
@@ -82,6 +82,24 @@ const cards = await Promise.all(
           </Project>
         ))
       }
+    </div>
+
+    <div class="mt-14">
+      <h3 class="m-0 text-[15px] font-semibold text-muted uppercase tracking-[0.04em]">
+        {t.claudeSkills}
+      </h3>
+      <div class="mt-5 grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-3">
+        {
+          claudeSkills[locale].map((s) => (
+            <div>
+              <p class="m-0 text-[16px] font-semibold">
+                <a href={s.href} rel="noopener">{s.name}</a>
+              </p>
+              <p class="mt-1 mb-0 text-[15px] leading-relaxed text-muted">{s.detail}</p>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </Section>
 
