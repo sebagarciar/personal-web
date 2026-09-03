@@ -30,7 +30,7 @@ export const ui = {
     about: 'About me',
     contact: 'Get in touch',
     contactNote: 'The fastest way to reach me is email.',
-    languagesList: 'Spanish native, English advanced.',
+    languagesList: 'Spanish native, English C1 (Duolingo English Test, 140/160).',
     metaDescription:
       'Sebastián García Romero. Operations and AI, Madrid. I owned Chile’s rider business at Uber and now build the tools I used to ask other teams for.',
   },
@@ -55,7 +55,7 @@ export const ui = {
     about: 'Sobre mí',
     contact: 'Hablemos',
     contactNote: 'La vía más rápida para llegar a mí es el correo.',
-    languagesList: 'Español nativo, inglés avanzado.',
+    languagesList: 'Español nativo, inglés C1 (Duolingo English Test, 140/160).',
     metaDescription:
       'Sebastián García Romero. Operaciones e IA, Madrid. Fui dueño de la vertical Rider de Uber en Chile y hoy construyo las herramientas que antes le pedía a otros equipos.',
   },
