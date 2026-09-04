@@ -27,6 +27,8 @@ export const ui = {
     education: 'Education',
     stack: 'Stack',
     claudeSkills: 'Claude Skills',
+    claudeSkillsNote:
+      'Reusable instructions that teach Claude Code how I want a recurring task done. These are the ones I use the most.',
     languages: 'Languages',
     about: 'About me',
     contact: 'Get in touch',
@@ -53,6 +55,8 @@ export const ui = {
     education: 'Formación',
     stack: 'Stack',
     claudeSkills: 'Claude Skills',
+    claudeSkillsNote:
+      'Instrucciones reutilizables que le enseñan a Claude Code cómo quiero que haga una tarea recurrente. Estas son las que más uso.',
     languages: 'Idiomas',
     about: 'Sobre mí',
     contact: 'Hablemos',
@@ -120,6 +124,11 @@ export const claudeSkills = {
       href: `${claudeSkillsRepo}/tree/main/tailor-cv`,
     },
     {
+      name: 'interview-prep',
+      detail: 'Researches the company, builds the interview brief, then drills me on it.',
+      href: `${claudeSkillsRepo}/tree/main/interview-prep`,
+    },
+    {
       name: 'weekly-vault-review',
       detail: 'Weekly cleanup pass on my MBA notes vault in Obsidian.',
       href: `${claudeSkillsRepo}/tree/main/weekly-vault-review`,
@@ -135,6 +144,11 @@ export const claudeSkills = {
       name: 'tailor-cv',
       detail: 'Ajusta mi CV a una oferta y entrega el PDF listo para postular.',
       href: `${claudeSkillsRepo}/tree/main/tailor-cv`,
+    },
+    {
+      name: 'interview-prep',
+      detail: 'Investiga la empresa, arma el brief de la entrevista y me hace el simulacro.',
+      href: `${claudeSkillsRepo}/tree/main/interview-prep`,
     },
     {
       name: 'weekly-vault-review',
