@@ -10,6 +10,10 @@ const { locale, title } = Astro.props;
 const t = ui[locale];
 const home = locale === 'en' ? '/' : '/es/';
 const other = t.otherLocale === 'en' ? '/' : '/es/';
+
+// Cloudflare Web Analytics. Paste the site token here to switch it on.
+// Empty string means no beacon is loaded at all.
+const analyticsToken = '1df71799831c4a9f9c2774c3021dc28a';
 ---
 
 <!doctype html>
@@ -19,6 +23,7 @@ const other = t.otherLocale === 'en' ? '/' : '/es/';
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={t.metaDescription} />
+    <meta name="robots" content="noindex, nofollow" />
     <link rel="canonical" href={new URL(home, Astro.site)} />
     <link rel="alternate" hreflang="en" href={new URL('/', Astro.site)} />
     <link rel="alternate" hreflang="es" href={new URL('/es/', Astro.site)} />
@@ -75,5 +80,45 @@ const other = t.otherLocale === 'en' ? '/' : '/es/';
         </p>
       </footer>
     </div>
+    <script is:inline define:vars={{ analyticsToken }}>
+      // Visits from Seba's own devices are excluded from analytics.
+      // Visit /?me=1 once per device to opt out, /?me=0 to opt back in.
+      (function () {
+        var KEY = 'sg:no-analytics';
+        var params = new URLSearchParams(location.search);
+
+        if (params.has('me')) {
+          var optOut = params.get('me') !== '0';
+          try {
+            if (optOut) localStorage.setItem(KEY, '1');
+            else localStorage.removeItem(KEY);
+          } catch (e) {
+            // Storage blocked (private window). Nothing to persist.
+          }
+          // Strip the flag so a copied URL never opts a visitor out.
+          params.delete('me');
+          var query = params.toString();
+          history.replaceState(
+            null,
+            '',
+            location.pathname + (query ? '?' + query : '') + location.hash
+          );
+        }
+
+        var excluded = false;
+        try {
+          excluded = localStorage.getItem(KEY) === '1';
+        } catch (e) {
+          // Storage blocked. Treat as a normal visitor and count it.
+        }
+        if (excluded || !analyticsToken) return;
+
+        var s = document.createElement('script');
+        s.defer = true;
+        s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+        s.setAttribute('data-cf-beacon', JSON.stringify({ token: analyticsToken }));
+        document.head.appendChild(s);
+      })();
+    </script>
   </body>
 </html>
