@@ -6,6 +6,12 @@
       "runtimeExecutable": "npx",
       "runtimeArgs": ["astro", "dev"],
       "port": 4321
+    },
+    {
+      "name": "personal-web-worker",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["wrangler", "dev", "--port", "8788", "--local"],
+      "port": 8788
     }
   ]
 }
