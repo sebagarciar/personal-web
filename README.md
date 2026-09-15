@@ -98,7 +98,7 @@ npm run build    # → dist/
 ## Stack
 
 Astro, Tailwind, Markdown content collections. Instrument Sans, self-hosted.
-Deployed on Cloudflare Pages. Domain still to be pointed at it.
+Deployed on Cloudflare Pages at sebasgarcia.dev.
 
 `src/lib/remark-mark.mjs` is a small remark plugin that turns `==text==` into
 `<mark>`. Astro's default Markdown processor does not support that syntax, so
