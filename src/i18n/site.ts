@@ -29,6 +29,10 @@ export const ui = {
     claudeSkills: 'Claude Skills',
     claudeSkillsNote:
       'Reusable instructions that teach Claude Code how I want a recurring task done. These are the ones I use the most.',
+    githubActivity: 'GitHub Activity',
+    githubActivityNote: 'My public commit history, updated weekly.',
+    githubActivityCount: 'contributions in the last year',
+    githubActivityLink: 'View profile',
     languages: 'Languages',
     about: 'About me',
     contact: 'Get in touch',
@@ -57,6 +61,10 @@ export const ui = {
     claudeSkills: 'Claude Skills',
     claudeSkillsNote:
       'Instrucciones reutilizables que le enseñan a Claude Code cómo quiero que haga una tarea recurrente. Estas son las que más uso.',
+    githubActivity: 'Actividad en GitHub',
+    githubActivityNote: 'Mi historial público de commits, actualizado cada semana.',
+    githubActivityCount: 'contribuciones en el último año',
+    githubActivityLink: 'Ver perfil',
     languages: 'Idiomas',
     about: 'Sobre mí',
     contact: 'Hablemos',

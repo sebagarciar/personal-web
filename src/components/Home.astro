@@ -5,6 +5,7 @@ import Base from '../layouts/Base.astro';
 import Section from './Section.astro';
 import Role from './Role.astro';
 import Project from './Project.astro';
+import GitHubActivity from './GitHubActivity.astro';
 import { ui, education, stack, claudeSkills, type Locale } from '../i18n/site';
 import portrait from '../assets/portrait.jpg';
 
@@ -103,6 +104,18 @@ const cards = await Promise.all(
           ))
         }
       </div>
+    </div>
+
+    <div class="mt-14">
+      <GitHubActivity
+        username={new URL(page.data.github).pathname.slice(1)}
+        locale={locale}
+        since="2026-04-01"
+        heading={t.githubActivity}
+        note={t.githubActivityNote}
+        countSuffix={t.githubActivityCount}
+        linkLabel={t.githubActivityLink}
+      />
     </div>
   </Section>
 

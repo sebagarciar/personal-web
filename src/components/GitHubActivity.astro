@@ -1,0 +1,116 @@
+---
+/**
+ * Contribution graph fetched at build time (this site ships zero client-side
+ * JS, so this cannot be a live widget — it reflects whatever was true the
+ * last time the site was built/deployed, not the current moment).
+ */
+interface Props {
+  username: string;
+  locale: 'en' | 'es';
+  heading: string;
+  note: string;
+  countSuffix: string;
+  linkLabel: string;
+  /** YYYY-MM-DD. Hides everything before this so a stray early commit doesn't
+   *  drag in months of blank cells before the activity actually picks up.
+   *  Bump it forward by hand if the graph ever needs a later starting point. */
+  since: string;
+}
+const { username, locale, heading, note, countSuffix, linkLabel, since } = Astro.props;
+
+interface Day {
+  date: string;
+  count: number;
+  level: number;
+}
+
+let days: Day[] = [];
+let total = 0;
+let ok = true;
+
+try {
+  const res = await fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`);
+  if (!res.ok) throw new Error(`status ${res.status}`);
+  const data = (await res.json()) as { total: Record<string, number>; contributions: Day[] };
+  days = data.contributions;
+  total = data.total.lastYear ?? 0;
+} catch (err) {
+  ok = false;
+  console.warn(`[GitHubActivity] no se pudo obtener la actividad de GitHub: ${err}`);
+}
+
+days = days.filter((d) => d.date >= since);
+
+const firstDow = days.length ? new Date(`${days[0].date}T00:00:00Z`).getUTCDay() : 0;
+const padded: (Day | null)[] = [...Array(firstDow).fill(null), ...days];
+const weeks: (Day | null)[][] = [];
+for (let i = 0; i < padded.length; i += 7) {
+  weeks.push(padded.slice(i, i + 7));
+}
+
+const levelColor = ['var(--color-line)', 'var(--color-wash)', '#A9B8F7', 'var(--color-blue)', 'var(--color-blue-deep)'];
+
+const cell = 11;
+const gap = 3;
+const step = cell + gap;
+const topPad = 16;
+const width = weeks.length * step - gap;
+const height = topPad + 7 * step - gap;
+
+const monthFmt = new Intl.DateTimeFormat(locale === 'es' ? 'es-ES' : 'en-US', {
+  month: 'short',
+  timeZone: 'UTC',
+});
+let lastMonth = -1;
+const monthLabels = weeks.map((week, wi) => {
+  const firstDay = week.find((d) => d) ?? null;
+  if (!firstDay) return null;
+  const month = new Date(`${firstDay.date}T00:00:00Z`).getUTCMonth();
+  if (month === lastMonth) return null;
+  lastMonth = month;
+  return { x: wi * step, label: monthFmt.format(new Date(`${firstDay.date}T00:00:00Z`)) };
+});
+---
+
+{
+  ok && (
+    <div>
+      <h3 class="m-0 text-[15px] font-semibold text-muted uppercase tracking-[0.04em]">{heading}</h3>
+      <p class="mt-2 mb-0 max-w-[52ch] text-[15px] leading-relaxed text-muted">{note}</p>
+      <div class="mt-5 overflow-x-auto">
+        <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height} role="img" aria-label={`${total} ${countSuffix}`}>
+          {monthLabels.map(
+            (m) =>
+              m && (
+                <text x={m.x} y={11} class="fill-muted" style="font-size: 10px;">
+                  {m.label}
+                </text>
+              )
+          )}
+          {weeks.map((week, wi) =>
+            week.map(
+              (day, di) =>
+                day && (
+                  <rect
+                    x={wi * step}
+                    y={topPad + di * step}
+                    width={cell}
+                    height={cell}
+                    rx={2}
+                    fill={levelColor[day.level]}
+                  >
+                    <title>{`${day.count} — ${day.date}`}</title>
+                  </rect>
+                )
+            )
+          )}
+        </svg>
+      </div>
+      <p class="mt-3 mb-0 text-[15px] text-muted">
+        <a href={`https://github.com/${username}`} rel="noopener">
+          {linkLabel}
+        </a>
+      </p>
+    </div>
+  )
+}
