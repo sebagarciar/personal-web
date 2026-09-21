@@ -3,10 +3,6 @@ name: Deploy
 on:
   push:
     branches: [main]
-  schedule:
-    # Every Monday 06:00 UTC — keeps the GitHub activity graph on the home
-    # page from going stale between manual deploys.
-    - cron: '0 6 * * 1'
   workflow_dispatch: {}
 
 jobs:
