@@ -54,7 +54,7 @@ const analyticsToken = '1df71799831c4a9f9c2774c3021dc28a';
         <nav class="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] font-medium sm:gap-x-8 sm:text-sm">
           {
             t.nav.map((item) => (
-              <a href={item.href} class="text-muted hover:text-ink">
+              <a href={item.href} class="text-muted hover:text-ink" data-ev={`nav:${item.href.slice(1)}`}>
                 {item.label}
               </a>
             ))
@@ -62,7 +62,12 @@ const analyticsToken = '1df71799831c4a9f9c2774c3021dc28a';
         </nav>
         <nav class="flex items-center gap-4 text-[13px] font-medium sm:gap-7 sm:text-sm">
           <span class="text-ink" aria-current="true">{t.thisLocaleLabel}</span>
-          <a href={other} class="text-muted hover:text-ink" hreflang={t.otherLocale}>
+          <a
+            href={other}
+            class="text-muted hover:text-ink"
+            hreflang={t.otherLocale}
+            data-ev={`locale:${t.otherLocale}`}
+          >
             {t.otherLocaleLabel}
           </a>
         </nav>
@@ -111,7 +116,76 @@ const analyticsToken = '1df71799831c4a9f9c2774c3021dc28a';
         } catch (e) {
           // Storage blocked. Treat as a normal visitor and count it.
         }
-        if (excluded || !analyticsToken) return;
+        if (excluded) return;
+
+        // Fuente de la visita. Un CV o aplicacion puede enlazar con
+        // ?src=<etiqueta> (p.ej. ?src=notion) para saber que documento trajo
+        // al visitante. Va al mismo pipeline de clics porque Web Analytics no
+        // tiene forma de distinguir origenes: es lo unico que da un conteo
+        // exacto y no muestreado.
+        (function () {
+          var src = params.get('src');
+          if (!src || !/^[a-z0-9-]{1,40}$/i.test(src) || !navigator.sendBeacon) return;
+          try {
+            navigator.sendBeacon(
+              '/e',
+              JSON.stringify({
+                e: 'src:' + src.toLowerCase(),
+                p: location.pathname,
+                l: document.documentElement.lang,
+                r: document.referrer
+              })
+            );
+          } catch (e) {
+            // Una fuente que no se registra no puede romper la carga.
+          }
+        })();
+
+        // Clics. El beacon de Cloudflare solo cuenta visitas, nunca clics, asi
+        // que estos van a /e, que el Worker guarda en D1. Un unico listener
+        // delegado: los enlaces marcados con data-ev dan su propio nombre y el
+        // resto se deduce del href, para que nada quede sin registrar.
+        document.addEventListener('click', function (event) {
+          var el = event.target;
+          if (!el || !el.closest) return;
+          var link = el.closest('a');
+          if (!link) return;
+
+          var href = link.getAttribute('href');
+          if (!href) return;
+
+          var name = link.dataset.ev || derive(href);
+          if (!name || !navigator.sendBeacon) return;
+
+          try {
+            navigator.sendBeacon(
+              '/e',
+              JSON.stringify({
+                e: name,
+                h: href,
+                p: location.pathname,
+                l: document.documentElement.lang,
+                r: document.referrer
+              })
+            );
+          } catch (e) {
+            // Un clic que no se registra no puede romper la navegacion.
+          }
+        });
+
+        function derive(href) {
+          if (href.charAt(0) === '#') return 'anchor:' + href.slice(1);
+          if (href.indexOf('mailto:') === 0) return 'email';
+          try {
+            var u = new URL(href, location.href);
+            if (u.origin === location.origin) return 'page:' + u.pathname;
+            return 'out:' + u.hostname.replace(/^www\./, '');
+          } catch (e) {
+            return 'link';
+          }
+        }
+
+        if (!analyticsToken) return;
 
         var s = document.createElement('script');
         s.defer = true;

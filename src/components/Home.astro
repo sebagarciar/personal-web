@@ -63,9 +63,9 @@ const cards = await Promise.all(
   </div>
 
   <ul class="mt-7 flex list-none flex-wrap gap-x-7 gap-y-2 p-0 text-[15px] font-medium">
-    <li><a href={`mailto:${page.data.email}`}>{page.data.email}</a></li>
-    <li><a href={page.data.linkedin} rel="noopener">LinkedIn</a></li>
-    <li><a href={page.data.github} rel="noopener">GitHub</a></li>
+    <li><a href={`mailto:${page.data.email}`} data-ev="email:hero">{page.data.email}</a></li>
+    <li><a href={page.data.linkedin} rel="noopener" data-ev="linkedin:hero">LinkedIn</a></li>
+    <li><a href={page.data.github} rel="noopener" data-ev="github:hero">GitHub</a></li>
   </ul>
 
   <Section title={t.built} note={t.builtNote} id="built">
@@ -76,6 +76,7 @@ const cards = await Promise.all(
             title={p.data.title}
             href={p.data.href}
             hrefLabel={p.data.hrefLabel}
+            ev={`project:${p.id.split('/').pop()}`}
             shot={p.data.shot}
             shotAlt={p.data.shotAlt}
           >
@@ -97,7 +98,7 @@ const cards = await Promise.all(
           claudeSkills[locale].map((s) => (
             <div>
               <p class="m-0 text-[16px] font-semibold">
-                <a href={s.href} rel="noopener">{s.name}</a>
+                <a href={s.href} rel="noopener" data-ev={`skill:${s.name}`}>{s.name}</a>
               </p>
               <p class="mt-1 mb-0 text-[15px] leading-relaxed text-muted">{s.detail}</p>
             </div>
@@ -171,9 +172,9 @@ const cards = await Promise.all(
 
   <Section title={t.contact} note={t.contactNote} id="contact">
     <ul class="m-0 flex list-none flex-col gap-3 p-0 text-[19px] font-medium">
-      <li><a href={`mailto:${page.data.email}`}>{page.data.email}</a></li>
-      <li><a href={page.data.linkedin} rel="noopener">LinkedIn</a></li>
-      <li><a href={page.data.github} rel="noopener">GitHub</a></li>
+      <li><a href={`mailto:${page.data.email}`} data-ev="email:contact">{page.data.email}</a></li>
+      <li><a href={page.data.linkedin} rel="noopener" data-ev="linkedin:contact">LinkedIn</a></li>
+      <li><a href={page.data.github} rel="noopener" data-ev="github:contact">GitHub</a></li>
     </ul>
   </Section>
 </Base>

@@ -7,10 +7,12 @@ interface Props {
   title: string;
   href?: string;
   hrefLabel?: string;
+  /** Nombre del clic en analitica, p.ej. "project:kindle-news". */
+  ev?: string;
   shot?: ImageMetadata;
   shotAlt?: string;
 }
-const { title, href, hrefLabel, shot, shotAlt } = Astro.props;
+const { title, href, hrefLabel, ev, shot, shotAlt } = Astro.props;
 ---
 
 <article>
@@ -41,7 +43,7 @@ const { title, href, hrefLabel, shot, shotAlt } = Astro.props;
   {
     href && (
       <p class="mt-3 mb-0 text-[15px] font-medium">
-        <a href={href} rel="noopener">
+        <a href={href} rel="noopener" data-ev={ev}>
           {hrefLabel ?? href}
         </a>
       </p>

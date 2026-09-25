@@ -1,9 +1,19 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "personal-web",
+  "main": "./worker/index.js",
   "account_id": "4c0b9c647373c2a595ba5ee2cb84740a",
   "compatibility_date": "2026-09-03",
   "assets": {
-    "directory": "./dist"
-  }
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  // Clics de la web. El Worker solo escribe; leer es cosa de analytics/clicks.py.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "personal-web-clicks",
+      "database_id": "55469aea-3ec3-445b-b6e6-a2f2c4acc4a9"
+    }
+  ]
 }
