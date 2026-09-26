@@ -1,7 +1,7 @@
 ---
 lang: en
 title: Olivar Golf Planner
-order: 4
+order: 3
 href: https://sebagarciar.github.io/olivar-golf-planner/
 hrefLabel: Open the planner
 shot: ../../../assets/shots/olivar-golf-planner.png
