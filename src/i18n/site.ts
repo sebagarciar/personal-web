@@ -122,11 +122,6 @@ const claudeSkillsRepo = 'https://github.com/sebagarciar/claude-skills';
 export const claudeSkills = {
   en: [
     {
-      name: 'finance-dashboard-design',
-      detail: 'The design system that governs the home finance app above.',
-      href: `${claudeSkillsRepo}/tree/main/finance-dashboard-design`,
-    },
-    {
       name: 'tailor-cv',
       detail: 'Matches my CV to a job ad and outputs the PDF ready to apply.',
       href: `${claudeSkillsRepo}/tree/main/tailor-cv`,
@@ -148,11 +143,6 @@ export const claudeSkills = {
     },
   ],
   es: [
-    {
-      name: 'finance-dashboard-design',
-      detail: 'El sistema de diseño que gobierna la app de finanzas de arriba.',
-      href: `${claudeSkillsRepo}/tree/main/finance-dashboard-design`,
-    },
     {
       name: 'tailor-cv',
       detail: 'Ajusta mi CV a una oferta y entrega el PDF listo para postular.',
