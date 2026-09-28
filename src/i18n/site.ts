@@ -141,6 +141,11 @@ export const claudeSkills = {
       detail: 'Weekly cleanup pass on my MBA notes vault in Obsidian.',
       href: `${claudeSkillsRepo}/tree/main/weekly-vault-review`,
     },
+    {
+      name: 'wrap-up',
+      detail: 'Reviews a session for lessons worth keeping, one item at a time, nothing written without my yes.',
+      href: `${claudeSkillsRepo}/tree/main/wrap-up`,
+    },
   ],
   es: [
     {
@@ -162,6 +167,11 @@ export const claudeSkills = {
       name: 'weekly-vault-review',
       detail: 'Limpieza semanal de mi vault de notas del MBA en Obsidian.',
       href: `${claudeSkillsRepo}/tree/main/weekly-vault-review`,
+    },
+    {
+      name: 'wrap-up',
+      detail: 'Revisa una sesión en busca de lecciones que valga la pena guardar, una por una, y no escribe nada sin mi visto bueno.',
+      href: `${claudeSkillsRepo}/tree/main/wrap-up`,
     },
   ],
 } as const;
