@@ -10,10 +10,13 @@ order: 2
 #### ==A country's rider business==, owned end to end.
 
 Acquisition, engagement and experience for Chile, with the budget and the
-number attached. City-level go-to-market, because the marketplace does not
-behave the same way in any two cities.
+number attached: the rider base grew **16%** year on year. City-level
+go-to-market, because the marketplace does not behave the same way in any two
+cities, took Uber to #1 market share in two of them.
 
 I led a regulatory initiative across Legal, Policy, Compliance and Engineering,
 and shipped the data-exchange infrastructure it needed. I redesigned the
 commercial agreement with Chile's largest electric fleet, which put **4×** the
-vehicles on the road in two years.
+vehicles on the road in two years. A margin analysis in SQL showed the
+promotions tool discounting riders at negative margin, and I fixed the
+targeting.

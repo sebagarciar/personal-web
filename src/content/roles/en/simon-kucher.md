@@ -14,4 +14,5 @@ machine-learning discount tool that predicted and standardised promotions,
 holding revenue while cutting promotional spend **10%**.
 
 I also built a pricing and packaging benchmark framework for a consumer goods
-multinational. Clients in consumer goods and retail.
+multinational. Clients in consumer goods and retail, and on every engagement I
+presented to the client's C-suite at steering committees.

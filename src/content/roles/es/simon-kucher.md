@@ -14,4 +14,5 @@ descuentos con machine learning que predecía y estandarizaba promociones,
 manteniendo los ingresos y bajando el gasto promocional un **10%**.
 
 También desarrollé un framework de benchmarks de pricing y packaging para una
-multinacional de consumo masivo. Clientes en consumo masivo y retail.
+multinacional de consumo masivo. Clientes en consumo masivo y retail, y en cada
+proyecto presenté a la alta gerencia del cliente en comités de dirección.
