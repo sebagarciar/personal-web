@@ -5,7 +5,7 @@ order: 1
 href: https://github.com/sebagarciar/home-finance
 hrefLabel: Código en GitHub
 shot: ../../../assets/shots/home-finance.png
-shotAlt: El dashboard de Home Finance con datos de demo, mostrando ingresos, gasto y exposición por moneda
+shotAlt: El resumen de Home Finance con datos de demo, mostrando patrimonio por tipo, gasto por categoría, el total y la actividad reciente
 ---
 
 Nuestra casa funciona entre España y Chile, con dos monedas y dos sistemas

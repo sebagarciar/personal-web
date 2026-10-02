@@ -5,7 +5,7 @@ order: 1
 href: https://github.com/sebagarciar/home-finance
 hrefLabel: Source on GitHub
 shot: ../../../assets/shots/home-finance.png
-shotAlt: The Home Finance dashboard running on demo data, showing income, spending and currency exposure
+shotAlt: The Home Finance overview running on demo data, showing net worth by type, spending by category, the total and recent activity
 ---
 
 Our household runs across Spain and Chile, on two currencies and two banking
