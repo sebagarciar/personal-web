@@ -2,7 +2,7 @@
 lang: en
 availability:
   - Madrid, Spain. EU work permit.
-  - Free to start in October 2026.
+  - Available immediately.
 email: sgarciar@student.ie.edu
 linkedin: https://www.linkedin.com/in/sebastiangarciaromero/
 github: https://github.com/sebagarciar

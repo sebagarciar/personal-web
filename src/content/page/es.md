@@ -2,7 +2,7 @@
 lang: es
 availability:
   - Madrid, España. Permiso de trabajo UE.
-  - Disponible desde octubre de 2026.
+  - Disponible de inmediato.
 email: sgarciar@student.ie.edu
 linkedin: https://www.linkedin.com/in/sebastiangarciaromero/
 github: https://github.com/sebagarciar
