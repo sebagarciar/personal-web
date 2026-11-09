@@ -9,13 +9,15 @@ interface Props {
   hrefLabel?: string;
   /** Nombre del clic en analitica, p.ej. "project:kindle-news". */
   ev?: string;
+  /** Ancla para enlazar directo a la ficha, p.ej. /#ia-os desde un CV o un correo. */
+  id?: string;
   shot?: ImageMetadata;
   shotAlt?: string;
 }
-const { title, href, hrefLabel, ev, shot, shotAlt } = Astro.props;
+const { title, href, hrefLabel, ev, id, shot, shotAlt } = Astro.props;
 ---
 
-<article>
+<article id={id} class="scroll-mt-24">
   <div class="aspect-[16/10] overflow-hidden rounded-[10px] border border-line bg-panel">
     {
       shot ? (

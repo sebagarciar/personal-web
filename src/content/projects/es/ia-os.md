@@ -1,9 +1,11 @@
 ---
 lang: es
 title: ia_os, mi sistema de agentes
-order: 6
+order: 4
 href: https://github.com/sebagarciar/ia-os-template
 hrefLabel: Plantilla en GitHub
+shot: ../../../assets/shots/ia-os.png
+shotAlt: Un CV de una página adaptado junto al chequeo de palabras clave, que separa qué faltantes son decisión de selección y cuáles requieren una pregunta al usuario
 ---
 
 El sistema con el que llevo mi búsqueda de trabajo, como plantilla limpia. Skills de Claude Code

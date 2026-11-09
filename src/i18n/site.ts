@@ -23,7 +23,7 @@ export const ui = {
     ],
     experience: 'Experience',
     built: 'Things I built and use',
-    builtNote: 'Not portfolio pieces. All five are running.',
+    builtNote: 'All six are live. One started as a class project.',
     education: 'Education',
     stack: 'Stack',
     claudeSkills: 'Claude Skills',
@@ -55,7 +55,7 @@ export const ui = {
     ],
     experience: 'Experiencia',
     built: 'Cosas que he construido y uso',
-    builtNote: 'No son piezas de portfolio. Las cinco están funcionando.',
+    builtNote: 'Las seis están funcionando. Una nació como proyecto de clase.',
     education: 'Formación',
     stack: 'Stack',
     claudeSkills: 'Claude Skills',
@@ -122,6 +122,21 @@ const claudeSkillsRepo = 'https://github.com/sebagarciar/claude-skills';
 export const claudeSkills = {
   en: [
     {
+      name: 'apply',
+      detail: 'Job ad in: checks the must-haves against my CV bank, builds the CV and form answers, logs it. Stops before Submit.',
+      href: `${claudeSkillsRepo}/tree/main/apply`,
+    },
+    {
+      name: 'find-jobs',
+      detail: 'Scans new postings every morning, ranks them against my CV and builds a one-page report.',
+      href: `${claudeSkillsRepo}/tree/main/find-jobs`,
+    },
+    {
+      name: 'business-case',
+      detail: 'Takes a case brief to one deck and one numbers model, with a review checklist.',
+      href: `${claudeSkillsRepo}/tree/main/business-case`,
+    },
+    {
       name: 'tailor-cv',
       detail: 'Matches my CV to a job ad and outputs the PDF ready to apply.',
       href: `${claudeSkillsRepo}/tree/main/tailor-cv`,
@@ -143,6 +158,21 @@ export const claudeSkills = {
     },
   ],
   es: [
+    {
+      name: 'apply',
+      detail: 'Entra un aviso de trabajo: revisa los requisitos contra mi banco de CV, arma el CV y las respuestas del formulario, y lo registra. Se detiene antes de enviar.',
+      href: `${claudeSkillsRepo}/tree/main/apply`,
+    },
+    {
+      name: 'find-jobs',
+      detail: 'Revisa las ofertas nuevas, las ordena contra mi CV y arma un informe de una página.',
+      href: `${claudeSkillsRepo}/tree/main/find-jobs`,
+    },
+    {
+      name: 'business-case',
+      detail: 'Lleva el brief de un caso a un deck y un modelo de números, con checklist de revisión.',
+      href: `${claudeSkillsRepo}/tree/main/business-case`,
+    },
     {
       name: 'tailor-cv',
       detail: 'Ajusta mi CV a una oferta y entrega el PDF listo para postular.',

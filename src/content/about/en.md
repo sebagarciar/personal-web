@@ -17,10 +17,9 @@ led end-to-end projects and saw how technology shapes everyday life. It's the
 same pull I feel toward ==AI== today.
 
 I'm still the person people come to with a tech problem, just with better
-tools now. The goal hasn't changed: keep building toward ==leadership roles==
-at major companies back in Chile.
+tools now.
 
-For now, though, I love where ==technology== and ==business== meet. That's
+I love where ==technology== and ==business== meet. That's
 why I'm looking for a role that needs both, where carrying a number and
 building the thing that moves it are the same job.
 

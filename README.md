@@ -13,10 +13,17 @@ one copy per language. To change something, edit the file.
 
 ```
 src/content/
-  page/{en,es}.md          opening line, availability, contact links
+  page/{en,es}.md          opening line, availability, LinkedIn and GitHub links
   about/{en,es}.md         the "About me" text
   roles/{en,es}/*.md       one file per job
   projects/{en,es}/*.md    one file per project
+```
+
+The contact email is not in the repo. The build reads it from `PUBLIC_CONTACT_EMAIL` in
+`.env`, which git ignores, and stops with an error if it is missing:
+
+```
+PUBLIC_CONTACT_EMAIL=you@example.com
 ```
 
 Structure that is short and lives in both languages at once (section titles,

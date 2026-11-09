@@ -45,7 +45,6 @@ const page = defineCollection({
        la linea mas larga, y asi la foto encima puede centrarse contra el texto
        de verdad y no contra una caja mas ancha que el. */
     availability: z.array(z.string()).min(1),
-    email: z.string(),
     linkedin: z.string(),
     github: z.string(),
   }),

@@ -3,15 +3,13 @@ lang: en
 availability:
   - Madrid, Spain. EU work permit.
   - Available immediately.
-email: sgarciar@student.ie.edu
 linkedin: https://www.linkedin.com/in/sebastiangarciaromero/
 github: https://github.com/sebagarciar
 ---
 
-# I run at the intersection of ==business== and ==technology==.
+# I've owned the ==number==. Now I build the ==tool== that moves it.
 
-I owned Chile's rider business at Uber and priced products for Simon-Kucher's
-clients. During the MBA I'm using AI to build a finance app to fix my own
-two-currency spreadsheets, migrate my mother's store to Shopify, and build a
-Kindle news digest that ranks my headlines with a local AI model. I use what
-I learn to teach AI at places like Fundación Casa de México and Chanel.
+At Chanel I ran AI adoption across 7 business functions: 10 automations, 40+
+hours of manual work removed each month, 86 people trained. Before that I led
+Chile's rider business at Uber and worked on pricing at Simon-Kucher. On my
+own time I build AI tools, and I use most of them every week.

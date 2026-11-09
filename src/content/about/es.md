@@ -17,12 +17,9 @@ Uber. Ahí lideré proyectos de punta a punta y vi cómo la tecnología cambia e
 día a día de la gente. Es el mismo impulso que hoy me lleva hacia la ==IA==.
 
 Sigo siendo la persona a la que la gente recurre con un problema de
-tecnología, solo que ahora con mejores herramientas. El objetivo no cambió:
-seguir construyendo hacia ==roles de liderazgo== en grandes empresas, de
-vuelta en Chile.
+tecnología, solo que ahora con mejores herramientas.
 
-Por ahora, eso sí, lo que más me gusta es donde se cruzan ==tecnología== y
-==negocio==. Por eso busco un rol que necesite las dos cosas, donde cargar un
+Lo que más me gusta es donde se cruzan ==tecnología== y ==negocio==. Por eso busco un rol que necesite las dos cosas, donde cargar un
 número y construir lo que lo mueve sean el mismo trabajo.
 
 ==Fuera del trabajo== me vas a encontrar en una cancha de golf o viendo

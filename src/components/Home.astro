@@ -19,6 +19,11 @@ const page = await getEntry('page', locale);
 const about = await getEntry('about', locale);
 if (!page || !about) throw new Error(`Falta el contenido de la pagina para "${locale}"`);
 
+// El correo no vive en el repo, que es publico: se lee de .env (ignorado por git)
+// al construir. Sin el, la build falla, para no publicar nunca la web sin contacto.
+const email = import.meta.env.PUBLIC_CONTACT_EMAIL;
+if (!email) throw new Error('Falta PUBLIC_CONTACT_EMAIL en site/.env');
+
 const { Content: PageContent } = await render(page);
 const { Content: AboutContent } = await render(about);
 
@@ -63,7 +68,7 @@ const cards = await Promise.all(
   </div>
 
   <ul class="mt-7 flex list-none flex-wrap gap-x-7 gap-y-2 p-0 text-[15px] font-medium">
-    <li><a href={`mailto:${page.data.email}`} data-ev="email:hero">{page.data.email}</a></li>
+    <li><a href={`mailto:${email}`} data-ev="email:hero">{email}</a></li>
     <li><a href={page.data.linkedin} rel="noopener" data-ev="linkedin:hero">LinkedIn</a></li>
     <li><a href={page.data.github} rel="noopener" data-ev="github:hero">GitHub</a></li>
   </ul>
@@ -77,6 +82,7 @@ const cards = await Promise.all(
             href={p.data.href}
             hrefLabel={p.data.hrefLabel}
             ev={`project:${p.id.split('/').pop()}`}
+            id={p.id.split('/').pop()}
             shot={p.data.shot}
             shotAlt={p.data.shotAlt}
           >
@@ -172,7 +178,7 @@ const cards = await Promise.all(
 
   <Section title={t.contact} note={t.contactNote} id="contact">
     <ul class="m-0 flex list-none flex-col gap-3 p-0 text-[19px] font-medium">
-      <li><a href={`mailto:${page.data.email}`} data-ev="email:contact">{page.data.email}</a></li>
+      <li><a href={`mailto:${email}`} data-ev="email:contact">{email}</a></li>
       <li><a href={page.data.linkedin} rel="noopener" data-ev="linkedin:contact">LinkedIn</a></li>
       <li><a href={page.data.github} rel="noopener" data-ev="github:contact">GitHub</a></li>
     </ul>
