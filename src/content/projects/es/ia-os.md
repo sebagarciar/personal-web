@@ -1,7 +1,7 @@
 ---
 lang: es
 title: ia_os, mi sistema de agentes
-order: 4
+order: 3
 href: https://github.com/sebagarciar/ia-os-template
 hrefLabel: Plantilla en GitHub
 shot: ../../../assets/shots/ia-os.png

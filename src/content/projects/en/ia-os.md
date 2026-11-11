@@ -1,7 +1,7 @@
 ---
 lang: en
 title: ia_os, my agent system
-order: 4
+order: 3
 href: https://github.com/sebagarciar/ia-os-template
 hrefLabel: Template on GitHub
 shot: ../../../assets/shots/ia-os.png
