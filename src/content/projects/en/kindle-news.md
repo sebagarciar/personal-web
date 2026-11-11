@@ -5,7 +5,7 @@ order: 2
 href: https://github.com/sebagarciar/kindle-news-filter
 hrefLabel: Source on GitHub
 shot: ../../../assets/shots/kindle-news.png
-shotAlt: The nine ranked headlines from a real Kindle News Filter edition, rendered as it appears on the device
+shotAlt: A reading queue on a phone, a local model, and the resulting news digest on a Kindle
 ---
 
 Nine headlines a day, ranked by how many outlets cover them rather than by

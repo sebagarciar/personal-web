@@ -5,7 +5,7 @@ order: 2
 href: https://github.com/sebagarciar/kindle-news-filter
 hrefLabel: Código en GitHub
 shot: ../../../assets/shots/kindle-news.png
-shotAlt: Los nueve titulares de una edición real de Kindle News Filter, recreados tal como se ven en el dispositivo
+shotAlt: Una cola de lectura en el teléfono, un modelo local y el resumen de noticias resultante en un Kindle
 ---
 
 Nueve titulares al día, ordenados por cuántos medios los cubren y no por qué

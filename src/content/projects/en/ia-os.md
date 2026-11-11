@@ -1,11 +1,11 @@
 ---
 lang: en
-title: ia_os, my agent system
+title: IA OS
 order: 3
 href: https://github.com/sebagarciar/ia-os-template
 hrefLabel: Template on GitHub
 shot: ../../../assets/shots/ia-os.png
-shotAlt: A tailored one-page CV next to the keyword check that flags which gaps are a selection decision and which need a question for the user
+shotAlt: A job ad, the keyword check that flags which gaps are a selection decision and which need a question, and the tailored one-page CV
 ---
 
 The system I run my job search on, as a clean template. Claude Code skills apply to a job, tailor
